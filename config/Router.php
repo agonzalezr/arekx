@@ -36,14 +36,10 @@ class Router {
               'mensaje' => $e->getMessage(),
           ];
 
-          echo static::twig()->render('error_handler.html.twig', $context);
+          $twig = new Environment(new FilesystemLoader(VIEWS_PATH));
+          echo $twig->render('error_handler.html.twig', $context);
       }
     }
 
     }
-
-    private static function twig(){
-        return new Environment(new FilesystemLoader(VIEWS_PATH));
-    }
-
 }
