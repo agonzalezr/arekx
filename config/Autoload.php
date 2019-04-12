@@ -11,7 +11,6 @@ class Autoload
         $route = DOCUMENT_ROOT . str_replace("\\", "/", $class) . ".php";
         if(is_readable($route))
             require_once $route;
-        break; 
     });
   }
 }
