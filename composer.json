@@ -1,0 +1,13 @@
+{
+    "require": {
+        "openpay/sdk": "dev-master",
+        "conekta/conekta-php": "^4.0",
+        "dompdf/dompdf": "^0.8.3",
+        "phpmailer/phpmailer": "^6.0",
+        "chillerlan/php-qrcode": "^3.0",
+        "box/spout": "^2.7",
+        "twig/twig": "^2.7",
+        "fortawesome/font-awesome": "^5.8",
+        "twbs/bootstrap": "^4.3"
+    }
+}
