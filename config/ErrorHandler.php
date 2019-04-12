@@ -49,9 +49,9 @@ class ErrorHandler {
                 break;
         }
 
-        $twig = new \Twig\Environment(new \Twig\Loader\FilesystemLoader(VIEWS_PATH));
+        $twig = new Environment(new FilesystemLoader(VIEWS_PATH));
         echo $twig->render('error_handler.html.twig', $context);
-        exit();
+        exit;
     }
 
     public static function fatal_handler_error(){

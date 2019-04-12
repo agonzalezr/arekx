@@ -1,6 +1,5 @@
 <?php namespace Config;
 
-use TicketApp;
 use \Twig\Environment;
 use \Twig\Loader\FilesystemLoader;
 
@@ -14,7 +13,6 @@ class Router {
     set_error_handler([ErrorHandler::class, 'handler_error']);
     register_shutdown_function([ErrorHandler::class, 'fatal_handler_error']);
 
-    TicketApp\Session::start();
     $controller = $request->getController();
     $method = $request->getMethod();
     $data = $request->getData();
@@ -45,7 +43,7 @@ class Router {
     }
 
     private static function twig(){
-        return new \Twig\Environment(new \Twig\Loader\FilesystemLoader(VIEWS_PATH));
+        return new Environment(new FilesystemLoader(VIEWS_PATH));
     }
 
 }
