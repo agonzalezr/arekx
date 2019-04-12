@@ -11,8 +11,8 @@ class ErrorHandler {
         if (!(error_reporting() & $errno))
             return;
 
-        $errfile = str_replace("/var/www/html/", "", $errfile);
-        $errstr = str_replace("/var/www/html/", "", $errstr);
+        $errfile = str_replace("/home/", "", $errfile);
+        $errstr = str_replace("/home/", "", $errstr);
 
         switch ($errno) {
 
