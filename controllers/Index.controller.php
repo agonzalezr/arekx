@@ -1,19 +1,19 @@
 <?php namespace Controllers;
 
-use \Twig\Environment;
-use \Twig\Loader\FilesystemLoader;
+use Arekx\Functions;
 
 class Index {
 
 	function default(){
+
 		$context = [
-			"title" => "The server is runnig...",
-			"hello_world" => "Hello, World!"
+			"title" => "The server is working...",
+			"message" => "Hello, World!"
 		];
-		echo $this->twig()->render('index.html.twig', $context);
+
+		Functions::render("hello", $context);
+
 	}
 
-	private function twig(){
-	    return new Environment(new FilesystemLoader(VIEWS_PATH));
-	}
+
 }

@@ -1,7 +1,6 @@
 <?php namespace Config;
 
-use \Twig\Environment;
-use \Twig\Loader\FilesystemLoader;
+use Arekx\Functions;
 
 class Router {
 
@@ -36,8 +35,7 @@ class Router {
               'mensaje' => $e->getMessage(),
           ];
 
-          $twig = new Environment(new FilesystemLoader(VIEWS_PATH));
-          echo $twig->render('error_handler.html.twig', $context);
+          Functions::render("error_handler", $context);
       }
     }
 

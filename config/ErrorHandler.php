@@ -1,7 +1,6 @@
 <?php namespace Config;
 
-use \Twig\Environment;
-use \Twig\Loader\FilesystemLoader;
+use Arekx\Functions;
 
 class ErrorHandler {
 
@@ -11,8 +10,8 @@ class ErrorHandler {
         if (!(error_reporting() & $errno))
             return;
 
-        $errfile = str_replace("/home/", "", $errfile);
-        $errstr = str_replace("/home/", "", $errstr);
+        $errfile = str_replace(PATH_FOR_HIDE, "", $errfile);
+        $errstr = str_replace(PATH_FOR_HIDE, "", $errstr);
 
         switch ($errno) {
 
@@ -49,8 +48,7 @@ class ErrorHandler {
                 break;
         }
 
-        $twig = new Environment(new FilesystemLoader(VIEWS_PATH));
-        echo $twig->render('error_handler.html.twig', $context);
+        Functions::render("error_handler", $context);
         exit;
     }
 
