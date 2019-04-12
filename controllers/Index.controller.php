@@ -1,7 +1,7 @@
 <?php namespace Controllers;
 
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use \Twig\Environment;
+use \Twig\Loader\FilesystemLoader;
 
 class Index {
 
@@ -14,6 +14,6 @@ class Index {
 	}
 
 	private function twig(){
-	    return new Twig_Environment(new Twig_Loader_Filesystem(VIEWS_PATH));
+	    return new \Twig\Environment(new \Twig\Loader\FilesystemLoader(VIEWS_PATH));
 	}
 }

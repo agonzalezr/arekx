@@ -1,8 +1,8 @@
 <?php namespace Config;
 
 use TicketApp;
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use \Twig\Environment;
+use \Twig\Loader\FilesystemLoader;
 
 class Router {
 
@@ -19,12 +19,12 @@ class Router {
     $method = $request->getMethod();
     $data = $request->getData();
 
-    $route = DOCUMENT_ROOT . "Controllers" . DIRECTORY_SEPARATOR . $controller . ".controller.php";
+    $route = DOCUMENT_ROOT . "controllers" . DIRECTORY_SEPARATOR . $controller . ".controller.php";
     if(is_readable($route))
     {
       try {
           require_once $route;
-          $controller_class = "Controllers\\" . $controller;
+          $controller_class = "controllers\\" . $controller;
           $controller_class = new $controller_class;
 
           (!isset($data)) ? call_user_func(array($controller_class, $method)) : call_user_func_array(array($controller_class, $method),$data);
@@ -45,7 +45,7 @@ class Router {
     }
 
     private static function twig(){
-        return new Twig_Environment(new Twig_Loader_Filesystem(VIEWS_PATH));
+        return new \Twig\Environment(new \Twig\Loader\FilesystemLoader(VIEWS_PATH));
     }
 
 }

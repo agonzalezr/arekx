@@ -1,7 +1,7 @@
 <?php namespace Config;
 
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use \Twig\Environment;
+use \Twig\Loader\FilesystemLoader;
 
 class ErrorHandler {
 
@@ -49,7 +49,7 @@ class ErrorHandler {
                 break;
         }
 
-        $twig = new Twig_Environment(new Twig_Loader_Filesystem(DOCUMENT_ROOT.'Views/system'));
+        $twig = new \Twig\Environment(new \Twig\Loader\FilesystemLoader(VIEWS_PATH));
         echo $twig->render('error_handler.html.twig', $context);
         exit();
     }
