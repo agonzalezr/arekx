@@ -1,5 +1,7 @@
 <?php namespace Models;
 
+use Arekx\Config;
+
 class Database {
 
     private static $db = null;
@@ -13,11 +15,11 @@ class Database {
     {
         try {
 
-            $data = simplexml_load_file(DOCUMENT_ROOT.'Config.xml');
-            $this->DbServer =  $data->Server;
-            $this->DbUser = $data->Username;
-            $this->DbPass = $data->Password;
-            $this->DbName = $data->Database;
+            $data = new Config();
+            $this->DbServer =  $data->get('Server');
+            $this->DbUser = $data->get('Username');
+            $this->DbPass = $data->get('Password');
+            $this->DbName = $data->get('Database');
             self::getDB();
 
         } catch (\PDOException $e) {
