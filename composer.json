@@ -8,6 +8,9 @@
         "box/spout": "^2.7",
         "twig/twig": "^2.7",
         "fortawesome/font-awesome": "^5.8",
-        "twbs/bootstrap": "^4.3"
+        "twbs/bootstrap": "^4.3",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-simplexml": "*"
     }
 }

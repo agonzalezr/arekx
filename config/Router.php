@@ -1,6 +1,6 @@
 <?php namespace Config;
 
-use Arekx\Functions;
+use Arekx\Render;
 
 class Router {
 
@@ -35,7 +35,7 @@ class Router {
               'mensaje' => $e->getMessage(),
           ];
 
-          Functions::render("error_handler", $context);
+          Render::html("error_handler", $context);
       }
     }
 

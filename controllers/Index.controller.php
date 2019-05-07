@@ -1,6 +1,6 @@
 <?php namespace Controllers;
 
-use Arekx\Functions;
+use Arekx\Render;
 
 class Index {
 
@@ -11,7 +11,7 @@ class Index {
 			"message" => "Hello, World!"
 		];
 
-		Functions::render("hello", $context);
+		Render::html("hello", $context);
 
 	}
 

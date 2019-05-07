@@ -33,15 +33,4 @@ class Request
     return $this->data;
     }
 
-    public static function post($name){
-      if(isset($_POST[$name]))
-        return $_POST[$name];
-      else
-        return null;
-    }
-
-    public static function get($name){
-        return trim($_GET[$name]);
-    }
-
 }

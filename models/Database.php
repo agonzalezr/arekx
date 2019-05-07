@@ -54,8 +54,6 @@ class Database {
     }
 
 
-    /*Custom by Alejandro*/
-
     public static function insert($query, $vars){
         $sth = Database::getInstance()->getDB()->prepare($query);
         return ($sth->execute($vars)) ? true : false;

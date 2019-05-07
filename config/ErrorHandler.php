@@ -1,6 +1,7 @@
 <?php namespace Config;
 
 use Arekx\Functions;
+use Arekx\Render;
 
 class ErrorHandler {
 
@@ -48,7 +49,7 @@ class ErrorHandler {
                 break;
         }
 
-        Functions::render("error_handler", $context);
+        Render::html("error_handler", $context);
         exit;
     }
 

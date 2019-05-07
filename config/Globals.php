@@ -7,4 +7,3 @@ define('DEFAULT_METHOD_NAME', 'default');
 define('VARIABLE_NAME', 'Path');
 define('PATH_FOR_HIDE', '/home/');
 define('VIEWS_PATH', DOCUMENT_ROOT.'views');
-
