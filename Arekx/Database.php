@@ -24,10 +24,11 @@ class Database {
                 'icon' => "fa-times",
                 'tipo' => "error",
                 'titulo' => 'Error de conexión',
-                'mensaje' => $e->getMessage(),
+                'mensaje' => "<pre>".$e->getMessage()."</pre>",
             ];
   
             Render::html("error_handler", $context);
+            exit;
         }
 
     }

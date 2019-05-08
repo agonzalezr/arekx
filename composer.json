@@ -1,6 +1,6 @@
 {
   "config": {
-    "vendor-dir": "Vendor"
+    "vendor-dir": "Libs"
   },
   "require": {
     "openpay/sdk": "dev-master",
@@ -23,11 +23,11 @@
       "rm -rf Public/assets/fontawesome",
       "mkdir Public/assets/bootstrap",
       "mkdir Public/assets/fontawesome",
-      "mv Vendor/twbs/bootstrap/dist/css Public/assets/bootstrap/css",
-      "mv Vendor/twbs/bootstrap/dist/js Public/assets/bootstrap/js",
-      "mv Vendor/fortawesome/font-awesome/css Public/assets/fontawesome/css",
-      "mv Vendor/fortawesome/font-awesome/js Public/assets/fontawesome/js",
-      "mv Vendor/fortawesome/font-awesome/webfonts Public/assets/fontawesome/webfonts"
+      "mv Libs/twbs/bootstrap/dist/css Public/assets/bootstrap/css",
+      "mv Libs/twbs/bootstrap/dist/js Public/assets/bootstrap/js",
+      "mv Libs/fortawesome/font-awesome/css Public/assets/fontawesome/css",
+      "mv Libs/fortawesome/font-awesome/js Public/assets/fontawesome/js",
+      "mv Libs/fortawesome/font-awesome/webfonts Public/assets/fontawesome/webfonts"
     ]
   }
 }

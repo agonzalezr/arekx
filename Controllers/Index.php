@@ -1,9 +1,8 @@
 <?php namespace Controllers;
 
 use Arekx\Render;
-use Arekx\Controller;
 
-class Index implements Controller {
+class Index {
 
 	function default(){
 
@@ -15,4 +14,5 @@ class Index implements Controller {
 		Render::html("hello", $context);
 
 	}
+
 }

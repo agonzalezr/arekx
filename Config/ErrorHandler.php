@@ -1,6 +1,5 @@
 <?php namespace Config;
 
-use Arekx\Functions;
 use Arekx\Render;
 
 class ErrorHandler {
