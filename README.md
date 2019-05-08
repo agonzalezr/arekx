@@ -29,6 +29,14 @@ Or if you installed composer with the arguments: --filename=composer --install-d
 composer install
 ```
 
+After the instalation of the libraries:
+
+```
+cp .env.example .env
+```
+
+And put your server data in the **.env** file. 
+
 ### For test the installation:
 
 - Point your **server document root** to the **/Public** folder.
