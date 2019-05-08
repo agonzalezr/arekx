@@ -6,22 +6,22 @@ class Router {
 
   public static function run(Request $request) {
 
-    date_default_timezone_set('America/Mexico_City');
+    date_default_timezone_set(TIMEZONE);
     ini_set('display_errors', 0);
     ini_set('display_startup_errors', 0);
-    set_error_handler([ErrorHandler::class, 'handler_error']);
-    register_shutdown_function([ErrorHandler::class, 'fatal_handler_error']);
+    set_error_handler([ErrorHandler::class, 'error_handler']);
+    register_shutdown_function([ErrorHandler::class, 'fatal_error_handler']);
 
     $controller = $request->getController();
     $method = $request->getMethod();
     $data = $request->getData();
 
-    $route = DOCUMENT_ROOT . "controllers" . DIRECTORY_SEPARATOR . $controller . ".controller.php";
+    $route = SYSTEM_ROOT . CONTROLLER_DIR . DIRECTORY_SEPARATOR . $controller . ".php";
     if(is_readable($route))
     {
       try {
           require_once $route;
-          $controller_class = "controllers\\" . $controller;
+          $controller_class = CONTROLLER_DIR . "\\" . $controller;
           $controller_class = new $controller_class;
 
           (!isset($data)) ? call_user_func(array($controller_class, $method)) : call_user_func_array(array($controller_class, $method),$data);

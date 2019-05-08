@@ -11,8 +11,3 @@
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule ^(.+)$ index.php?Path=$1 [L,QSA]
 </IfModule>
-
-<Files Config.xml>
-    Order Allow,Deny
-    Deny from all
-</Files>

@@ -1,6 +1,4 @@
-<?php namespace Models;
-
-use Arekx\Config;
+<?php namespace Arekx;
 
 class Database {
 
@@ -24,7 +22,14 @@ class Database {
 
         } catch (\PDOException $e) {
 
-            echo $e->getMessage();
+            $context = [
+                'icon' => "fa-times",
+                'tipo' => "error",
+                'titulo' => 'Error de conexión',
+                'mensaje' => $e->getMessage(),
+            ];
+  
+            Render::html("error_handler", $context);
         }
 
     }

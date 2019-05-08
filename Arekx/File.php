@@ -15,7 +15,7 @@ class File {
         {
             $this->filename = $this->file['name'];
             $this->file_ext = pathinfo($this->filename,PATHINFO_EXTENSION);
-            $this->file_path = "uploads/" . date("YmdHis") . "_" . md5($this->filename) . "." . $this->file_ext;
+            $this->file_path = "uploads/" . date("YmdHis") . "_" . md5($this->filename . rand(0,100)) . "." . $this->file_ext;
             if(!move_uploaded_file($this->file['tmp_name'], DOCUMENT_ROOT."/" . $this->file_path )){
                 Render::json([
                     "type" => "error",

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>{{ title }}</title>
+        <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+        <style>
+            html,
+            body {
+                color: #000a20;
+                height: 100vh;
+                margin: 0;
+            }
+            .full-height {
+                height: 100vh;
+            }
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+            h1 {
+                resize: vertical;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container full-height">
+            <div class="d-flex flex-center full-height">
+                <h1>
+                    <i class="fas fa-globe-americas"></i>
+                    {{ message }}</h1>
+            </div>
+        </div>
+    </body>
+</html>

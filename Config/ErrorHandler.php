@@ -5,7 +5,7 @@ use Arekx\Render;
 
 class ErrorHandler {
 
-    public static function handler_error($errno, $errstr, $errfile, $errline)
+    public static function error_handler($errno, $errstr, $errfile, $errline)
     {
 
         if (!(error_reporting() & $errno))
@@ -53,10 +53,10 @@ class ErrorHandler {
         exit;
     }
 
-    public static function fatal_handler_error(){
+    public static function fatal_error_handler(){
         $last_error = error_get_last();
         if ($last_error['type'] === E_ERROR) {
-            static::handler_error(E_ERROR, $last_error['message'], $last_error['file'], $last_error['line']);
+            static::error_handler(E_ERROR, $last_error['message'], $last_error['file'], $last_error['line']);
         }
     }
 
@@ -72,7 +72,7 @@ class ErrorHandler {
         $str = ob_get_contents();
         ob_end_clean();
 
-        $str = str_replace("{main}\n", "{main}", $str);
+        $str = str_replace("{main}\n", "Main thread", $str);
         $return .= $str . "</pre>";
 
         return $return;

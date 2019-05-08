@@ -1,16 +1,33 @@
 {
-    "require": {
-        "openpay/sdk": "dev-master",
-        "conekta/conekta-php": "^4.0",
-        "dompdf/dompdf": "^0.8.3",
-        "phpmailer/phpmailer": "^6.0",
-        "chillerlan/php-qrcode": "^3.0",
-        "box/spout": "^2.7",
-        "twig/twig": "^2.7",
-        "fortawesome/font-awesome": "^5.8",
-        "twbs/bootstrap": "^4.3",
-        "ext-json": "*",
-        "ext-pdo": "*",
-        "ext-simplexml": "*"
-    }
+  "config": {
+    "vendor-dir": "Vendor"
+  },
+  "require": {
+    "openpay/sdk": "dev-master",
+    "conekta/conekta-php": "^4.0",
+    "dompdf/dompdf": "^0.8.3",
+    "phpmailer/phpmailer": "^6.0",
+    "chillerlan/php-qrcode": "^3.0",
+    "box/spout": "^2.7",
+    "twig/twig": "^2.7",
+    "vlucas/phpdotenv": "^3.3",
+    "fortawesome/font-awesome": "^5.8",
+    "twbs/bootstrap": "^4.3",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "ext-simplexml": "*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf public/assets/bootstrap",
+      "rm -rf public/assets/fontawesome",
+      "mkdir public/assets/bootstrap",
+      "mkdir public/assets/fontawesome",
+      "mv Vendor/twbs/bootstrap/dist/css public/assets/bootstrap/css",
+      "mv Vendor/twbs/bootstrap/dist/js public/assets/bootstrap/js",
+      "mv Vendor/fortawesome/font-awesome/css public/assets/fontawesome/css",
+      "mv Vendor/fortawesome/font-awesome/js public/assets/fontawesome/js",
+      "mv Vendor/fortawesome/font-awesome/webfonts public/assets/fontawesome/webfonts"
+    ]
+  }
 }
