@@ -16,7 +16,7 @@ First you will need the following php extensions installed in your server:
 - php7-pdo
 - php7-mysql
 
-###### Installation:
+### Installation:
 
 
 ```
@@ -29,7 +29,7 @@ Or if you installed composer with the arguments: --filename=composer --install-d
 composer install
 ```
 
-###### For test the installation:
+### For test the installation:
 
 - Point your **server document root** to the **/Public** folder.
 
