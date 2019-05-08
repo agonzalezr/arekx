@@ -12,12 +12,10 @@ class Database {
     final private function __construct()
     {
         try {
-
-            $data = new Config();
-            $this->DbServer =  $data->get('Server');
-            $this->DbUser = $data->get('Username');
-            $this->DbPass = $data->get('Password');
-            $this->DbName = $data->get('Database');
+            $this->DbServer = getenv('DB_NAME');
+            $this->DbUser = getenv('DB_USERNAME');
+            $this->DbPass = getenv('DB_PASSWORD');
+            $this->DbName = getenv('DB_SERVER');
             self::getDB();
 
         } catch (\PDOException $e) {

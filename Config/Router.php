@@ -1,5 +1,6 @@
 <?php namespace Config;
 
+use \Dotenv\Dotenv;
 use Arekx\Render;
 
 class Router {
@@ -11,6 +12,9 @@ class Router {
     ini_set('display_startup_errors', 0);
     set_error_handler([ErrorHandler::class, 'error_handler']);
     register_shutdown_function([ErrorHandler::class, 'fatal_error_handler']);
+
+    $dotenv = Dotenv::create(SYSTEM_ROOT);
+    $dotenv->load();
 
     $controller = $request->getController();
     $method = $request->getMethod();

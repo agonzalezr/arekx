@@ -1,4 +1,6 @@
 Vendor/*
+Public/assets/bootstrap/*
+Public/assets/fontawesome/*
 composer.phar
 composer.lock
 .idea/
